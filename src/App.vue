@@ -1,18 +1,25 @@
 <template lang="pug">
-  div#app
-    div#topbar Top Bar
+  #app
+    TopBar
     div#main
       div(style="background-color: pink; height: 1000px")
-    div#footer Footer
+    BtmBar
 </template>
 
 <script>
+import TopBar from './TopBar.vue'
+import BtmBar from './BtmBar.vue'
+
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    TopBar,
+    BtmBar
   }
 }
 </script>
@@ -29,13 +36,21 @@ body
   -moz-osx-font-smoothing: grayscale
   color: #2c3e50
 
-#topbar, #footer
+#topbar, #btmbar
   background-color: grey
   height: 10vh
 
 #main
   flex: 1
   overflow-y: scroll
+
+.flex-container
+  @media (min-width:700px)
+    margin: 0 auto
+    width: 700px
+
+.text-center
+  text-align: center
 
 h1, h2
   font-weight: normal
