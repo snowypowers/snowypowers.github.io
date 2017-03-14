@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     TopBar.primary-color(v-bind:pages="pages")
-    #main
+    #main.secondary-color
       router-view
     BtmBar.primary-color(v-bind:sections="sections")
 </template>
@@ -37,13 +37,17 @@ export default {
 
 <style lang="stylus">
 pri-bg = #552B72
+//pri-bg = #A48DB4
 pri-text = white
-sec-bg = #852D64
+sec-bg = #DAD6DD
 sec-text = black
 
 body
   margin: 0 0
   font-size: 16px
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 .primary-color
   background-color: pri-bg
@@ -70,10 +74,6 @@ button
   display: flex
   flex-direction: column
   height: 100vh
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  color: #2c3e50
 
 #topbar, #btmbar
   height: 10vh
@@ -99,21 +99,7 @@ button
 .text-center
   text-align: center
 
-h1, h2
-  font-weight: normal
-
-
-ul
-  list-style-type: none
-  padding: 0
-
-
-li
-  display: inline-block
-  margin: 0 10px
-
-
-a
-  color: #42b983
-
+img.circle
+  border-radius: 50%
+  margin: auto
 </style>
