@@ -1,21 +1,28 @@
 <template lang="pug">
 #btmbar
-  .flex-container.text-center
-    p Bottom Bar. Static bar meant for minor navigation within the content
+  .flex-container.text-center.flex-center
+    .navDot(v-for="(item, index) in sections", :key="index")
+      i(class="material-icons") radio_button_unchecked
 
 </template>
 
 <script>
 export default {
   name: 'BtmBar',
+  props: {
+    sections: {
+      type: Array,
+      default: []
+    }
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
 </script>
 
 <style lang="stylus">
-
+.navDot
+  padding: 8px 8px
 </style>
