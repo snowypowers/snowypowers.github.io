@@ -1,18 +1,20 @@
 <template lang="pug">
-.flex-container#home
-  h1 ???
-
-
-
-
+.flex-container.text-center#notfound
+  h1 Lost?
+  p Find your way using the links at the top
+  button( @click="rewind") Rewind
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'NotFound',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    rewind: function() {
+      this.$router.go(-1)
     }
   },
   mounted() {
@@ -22,5 +24,11 @@ export default {
 </script>
 
 <style lang="stylus">
-
+#notfound
+  display: flex
+  height: 100%
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  flex: 1
 </style>
