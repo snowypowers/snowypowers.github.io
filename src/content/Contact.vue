@@ -2,7 +2,8 @@
 .flex-container.text-center#contacts
   .flex-container#icons
     .icon-container(v-for="(item,index) in links", :key="index")
-      i( :class="item.class", :href="item.href", aria-hidden="true")
+      a( :href="item.href")
+        i.contact-icon( :class="item.class", aria-hidden="true")
   p(style="align-self: flex-end") Icons taken from Font Awesome
 
 </template>
@@ -40,7 +41,8 @@ export default {
   justify-content:space-around
   align-items: center
 
-.icon-container > i.fa
+.contact-icon
+  color: black
   font-size: 200px
   margin: 30px 30px
 </style>

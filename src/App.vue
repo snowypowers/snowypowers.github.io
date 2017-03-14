@@ -99,7 +99,15 @@ button
 .text-center
   text-align: center
 
+img
+  width: 100%
+  height: auto
 img.circle
   border-radius: 50%
   margin: auto
+
+img.round-sq
+  border-radius: 10%
+  margin: auto
+
 </style>
