@@ -1,19 +1,9 @@
 <template lang="pug">
   div#app
-    img(src="./assets/logo.png")
-    h1 
-    h2 Essential Links
-    ul
-      li: a(href="https://vuejs.org" target="_blank") Core Docs
-      li: a(href="https://forum.vuejs.org" target="_blank") Forum
-      li: a(href="https://gitter.im/vuejs/vue" target="_blank") Gitter Chat
-      li: a(href="https://twitter.com/vuejs" target="_blank") Twitter
-    h2 Ecosystem
-    ul
-      li: a(href="http://router.vuejs.org/" target="_blank") vue-router
-      li: a(href="http://vuex.vuejs.org/" target="_blank") vuex
-      li: a(href="http://vue-loader.vuejs.org/" target="_blank") vue-loader
-      li: a(href="https://github.com/vuejs/awesome-vue" target="_blank") awesome-vue
+    div#topbar Top Bar
+    div#main
+      div(style="background-color: pink; height: 1000px")
+    div#footer Footer
 </template>
 
 <script>
@@ -28,30 +18,40 @@ export default {
 </script>
 
 <style lang="stylus">
-#app 
+body
+  margin: 0 0
+#app
+  display: flex
+  flex-direction: column
+  height: 100vh
   font-family: 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  text-align: center
   color: #2c3e50
-  margin-top: 60px
 
+#topbar, #footer
+  background-color: grey
+  height: 10vh
 
-h1, h2 
+#main
+  flex: 1
+  overflow-y: scroll
+
+h1, h2
   font-weight: normal
 
 
-ul 
+ul
   list-style-type: none
   padding: 0
 
 
-li 
+li
   display: inline-block
   margin: 0 10px
 
 
-a 
+a
   color: #42b983
 
 </style>
