@@ -1,6 +1,6 @@
 # github-page
 
-[https://snowypowers.github.io]( My personal Github Page )
+[ My personal Github Page ](https://snowypowers.github.io)
 
 ## Build Setup
 
