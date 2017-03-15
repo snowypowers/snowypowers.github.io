@@ -1,13 +1,17 @@
 <template lang="pug">
-.flex-container#home
-  div.text-center#avatar
-    img.round-sq(src="../assets/avatar.jpg")
-  div#desc
-    h1 Yak Jun Xiang
-    p.
-      I am a Singaporean software developer who loves to tinker around with random technologies. Checkout my projects!
-    p Besides work, I loves games and anime. And yes, purple is my favorite color.
-    p Scroll down to read more or use the links above to navigate!
+div
+  .flex-container#home
+    div.text-center#avatar
+      img.round-sq(src="../assets/avatar.jpg")
+    div#desc
+      h1 Yak Jun Xiang
+      p.
+        I am a Singaporean software developer who loves to tinker around with random technologies. Checkout my projects!
+      p Besides work, I loves games and anime. And yes, purple is my favorite color.
+      p Scroll down to read more or use the links above to navigate!
+
+  .flex-container.flex-center#about
+    h1 Work in Progress
 </template>
 
 <script>
@@ -26,11 +30,12 @@ export default {
 
 <style lang="stylus" scoped>
 #home
-  height: 100%
+  min-height: 80vh
   display: flex
   flex-flow: row wrap
   align-items: center
   justify-content: center
+  padding-bottom: 20vh
 
 #avatar
   flex: 1

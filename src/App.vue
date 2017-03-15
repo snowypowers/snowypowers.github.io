@@ -16,7 +16,6 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       pages: [
-        {text: "About", link: "/about"},
         {text: "Projects", link: "/projects"},
         {text: "Contact", link: "/contact"}
       ],
