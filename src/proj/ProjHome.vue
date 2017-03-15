@@ -1,22 +1,15 @@
 <template lang="pug">
-.flex-container#projects
-  router-view
-
-
-
+div Welcome to Projects!
 
 </template>
 
 <script>
 export default {
-  name: 'Projects',
+  name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  },
-  mounted() {
-    this.$parent.$data.sections = ["home","ghpage"]
   }
 }
 </script>

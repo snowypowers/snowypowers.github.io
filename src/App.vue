@@ -36,11 +36,18 @@ export default {
 </script>
 
 <style lang="stylus">
-pri-bg = #552B72
-//pri-bg = #A48DB4
+pri-bg = #755FA2
 pri-text = white
-sec-bg = #DAD6DD
+pri-head = #9B26AF
+sec-bg = white
 sec-text = black
+sec-head = #9B26AF
+// pri-bg = black
+// pri-text = white
+// pri-head = #424242
+// sec-bg = #9E9E9E
+// sec-text = black
+// sec-head = #424242
 
 body
   margin: 0 0
@@ -48,14 +55,22 @@ body
   font-family: 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  color: black
+
+h1, h2, h3, h4
+  color: sec-head
 
 .primary-color
   background-color: pri-bg
   color: pri-text
+  > h1, h2, h3, h4
+    color: pri-head
 
 .secondary-color
   background: sec-bg
   color: sec-text
+  > h1, h2, h3, h4
+    color: sec-head
 
 .placeholder
   background: sec-bg
@@ -73,12 +88,17 @@ button
 #app
   display: flex
   flex-direction: column
+  //min-height: 100vh
   height: 100vh
 
 #topbar, #btmbar
-  height: 10vh
+  height: 5vh
   display: flex
 
+// #btmbar
+//   width: 100%
+//   position: fixed
+//   top:90vh
 #main
   flex: 1
   overflow-y: scroll
@@ -91,6 +111,10 @@ button
     width: 700px
   @media (min-width:1080px)
     width: 1000px
+
+.flex-col
+  display: flex
+  flex-flow: column wrap
 
 .flex-center
   justify-content: center

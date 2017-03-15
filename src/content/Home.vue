@@ -7,8 +7,7 @@
     p.
       I am a Singaporean software developer who loves to tinker around with random technologies. Checkout my projects!
     p Besides work, I loves games and anime. And yes, purple is my favorite color.
-    p Navigate using the links above, surf the subsections with circles below
-    p This page is built with VueJS
+    p Scroll down to read more or use the links above to navigate!
 </template>
 
 <script>
