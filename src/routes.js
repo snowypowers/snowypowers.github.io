@@ -17,7 +17,6 @@ const routes = [
   {path: '/', component: Home},
   {path:'/projects', component: Projects, children: projChildren},
   {path:'/contact', component: Contact},
-  {path: '*', component: NotFound}
 ]
 
 export default routes
