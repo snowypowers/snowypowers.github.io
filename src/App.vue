@@ -2,13 +2,18 @@
   #app
     TopBar.primary-color(v-bind:pages="pages")
     #main.secondary-color
-      router-view
-    BtmBar.primary-color(v-bind:sections="sections")
+      Home
+      Projects
+      Contact
+
 </template>
 
 <script>
 import TopBar from './TopBar.vue'
 import BtmBar from './BtmBar.vue'
+import Home from './content/Home.vue'
+import Projects from './content/Projects.vue'
+import Contact from './content/Contact.vue'
 
 export default {
   name: 'app',
@@ -29,7 +34,10 @@ export default {
   },
   components: {
     TopBar,
-    BtmBar
+    BtmBar,
+    Home,
+    Projects,
+    Contact
   }
 }
 </script>
