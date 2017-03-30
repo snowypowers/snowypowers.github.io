@@ -6,9 +6,9 @@
     h1 Jun Xiang
     p Hi! I am a software developer in Singapore and welcome to my page!
     div
-      a.button.secondary.neutral(href="#about") About
-      a.button.secondary.neutral(href="#projects") Projects
-      a.button.secondary.neutral(href="#contact") Contact
+      a.button.primary.neutral.lighten(href="#about") About
+      a.button.primary.neutral.lighten(href="#projects") Projects
+      a.button.primary.neutral.lighten(href="#contact") Contact
     i#down.fa.fa-angle-down
 </template>
 

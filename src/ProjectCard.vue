@@ -3,7 +3,7 @@
   .card-body
     .upper.flex
       h3 {{ project.title }}
-      .tag.primary.darken.white-text( v-for="(item, index) in project.tags", :key="index") {{ item.toUpperCase() }}
+      .tag.primary.neutral.white-text( v-for="(item, index) in project.tags", :key="index") {{ item.toUpperCase() }}
     div
       p {{ project.desc }}
   .card-tail

@@ -27,13 +27,13 @@ export default {
         },
         {
           title: "ShootyWooty",
-          tags: ["java", 'libgdx', "SCH PROJ"],
+          tags: ["java", 'libgdx'],
           desc: "A multiplayer android game made with LibGDX",
           link: "https://github.com/snowypowers/ShootyWooty"
         },
         {
           title: "ferrographics",
-          tags: ["C++", 'opengl', "SCH PROJ"],
+          tags: ["C++", 'opengl'],
           desc: "A particle animation for ferrofluids using Smoothed Particle Hydrodynamics",
           link: "https://github.com/snowypowers/ferrographics"
         },
