@@ -1,7 +1,7 @@
 <template lang="pug">
 .section.flex.col.center#contact
   h1 Contact
-  #icons.flex.center
+  #contacticons.flex.center
     a(href="https://github.com/snowypowers")
       i.fa.fa-github-square.pri-darken-text
     a(href="https://www.linkedin.com/in/jun-xiang-yak-7b387687/")
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="stylus">
-#icons
+#contacticons
   font-size: 80px
   > a
 

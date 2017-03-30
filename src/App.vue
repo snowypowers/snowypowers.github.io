@@ -1,12 +1,12 @@
 <template lang="pug">
-#app.primary.neutral.lighten
-  #head.primary.neutral.darken.flex.center
+#app.white.tint
+  #head.primary.neutral.shade.flex.center
     i.fa.fa-snowflake-o.white-text#special-snowflake
   Splash
   About
   Projects
   Contact
-  #foot.primary.neutral.darken.flex.col.center.white-text
+  #foot.primary.neutral.shade.flex.col.center.white-text
     p Created with VueJS
     p Coded by snowypowers
 </template>

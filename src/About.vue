@@ -2,18 +2,16 @@
 .section.flex.col.center#about
   h1 About
   .content.white
+    div.flex.center
+      img.round-sq#avatar(src="./assets/avatar.jpg")
     h3 Me
-    p I am a Singaporean software developer who loves tinkering. I had a long history of interacting with code since young but never took it seriously until I went to university. In SUTD, I chose the road towards Computer Science and never looked back.
-    p I am currently unemployed and am taking this chance to learn more about the different technologies available on the web. I recently picked up VueJS and thus, this page was born.
+    p I am a Singaporean software developer who likes tinkering with code and learning new stuff. You can find my tinkering projects on Github. This website is a way for me to learn about VueJS and also some color design.
+    p And I use Windows. Yes, that is an important point in the world of coding. I try to stay within windows for all my developments purposes other than hosting servers, which I use Ubuntu provided on their platforms (AWS, DO).
+    p In my free time, I watch anime, e-sports streams and play some indie games.
 
     h3 Skills
-    p I consider myself a jack of all trades. I learn and adapt fast by seeking to understand the inner workings of systems. I prefer to fully understand the tool that I am using rather than just hammering with it.
-    p I am experienced in Python, Java and Javascript. I am able to do web development (both front and back) and assist in Machine Learning projects.
-
-    h3 Hobbies
-    p Besides coding for life, I do watch a lot of anime and play computer games.
-    p Anime may seem to appeal to the younger crowd but I feel that the medium allows us to create fantasy worlds beyond what live action can give us.This creates opportunities to exploit for more creative and crazy content.
-    p I mostly play indie games because I enjoy the unique gameplay mechanics that the developers come up with.
+    p I mainly code in Python and Javascript nowadays. I have experience in typed languages, coming from Java background and also touched C++ for graphics work.
+    p For Javascript, I have worked with npm, Babel, Webpack and understand the workflow. My UI framework of choice is VueJS because of its ease and clear documentation.
 
 </template>
 
@@ -28,6 +26,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-
+<style lang="stylus" scoped>
+#avatar
+  width: 300px
+.inline-block
+  display: inline-block
 </style>
