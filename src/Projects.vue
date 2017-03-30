@@ -14,6 +14,12 @@ export default {
     return {
       projects: [
         {
+          title: "Teru - Telegram Bot for SG Weather",
+          tags: ["Go"],
+          desc: "A Telegram bot for SG Weather written in Go, integrating data API from NEA and NLP powers from API.ai",
+          link: "https://github.com/snowypowers/teru"
+        },
+        {
           title: "Color My Life (VueColor)",
           tags: ["js",'Vue'],
           desc: "A site to test and view a complementary color palette. This was done as a learning and exploration tool for color design.",
