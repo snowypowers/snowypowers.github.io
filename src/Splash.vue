@@ -1,10 +1,14 @@
 <template lang="pug">
 #splash.flex.col.center
   .content.flex.col.center
-    #avatar
-      img.round-sq(src="./assets/avatar.jpg")
     h1 Jun Xiang
+    p @snowypowers
     p Hi! I am a software developer in Singapore and welcome to my page!
+    #icons
+      a(href="https://github.com/snowypowers")
+        i.fa.fa-github-square.pri-darken-text
+      a(href="https://www.linkedin.com/in/jun-xiang-yak-7b387687/")
+        i.fa.fa-linkedin-square.pri-darken-text
     div
       a.button.primary.neutral.lighten(href="#about") About
       a.button.primary.neutral.lighten(href="#projects") Projects
@@ -32,5 +36,10 @@ export default {
 
 #down
   font-size: 40px
+
+#icons
+  font-size: 32px
+  > a
+    margin: 8px 8px
 
 </style>

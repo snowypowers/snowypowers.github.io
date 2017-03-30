@@ -2,6 +2,8 @@
 .section.flex.col.center#about
   h1 About
   .content.white
+    div.flex.center
+      img.round-sq#avatar(src="./assets/avatar.jpg")
     h3 Me
     p I am a Singaporean software developer who likes tinkering with code and learning new stuff. You can find my tinkering projects on Github. This website is a way for me to learn about VueJS and also some color design.
     p And I use Windows. Yes, that is an important point in the world of coding. I try to stay within windows for all my developments purposes other than hosting servers, which I use Ubuntu provided on their platforms (AWS, DO).
@@ -24,6 +26,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-
+<style lang="stylus" scoped>
+#avatar
+  width: 300px
+.inline-block
+  display: inline-block
 </style>
