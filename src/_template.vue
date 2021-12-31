@@ -3,17 +3,15 @@
 
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+      msg: "Welcome to Your Vue.js App",
+    };
+  },
+};
 </script>
 
-<style lang="stylus">
-
-</style>
+<style></style>
