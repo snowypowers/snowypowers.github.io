@@ -1,0 +1,1 @@
+import{o as t,a as r,n as o}from"./vendor.ead5042e.js";import{_ as s}from"./index.cd380377.js";const n={class:"mb-10 text-center text-3xl sm_text-5xl"};function a(e,l){return t(),r("h1",n,[o(e.$slots,"default")])}const c={};var m=s(c,[["render",a]]);export{m as P};
