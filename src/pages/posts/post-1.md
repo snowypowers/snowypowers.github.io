@@ -1,7 +1,7 @@
 ---
-title: 'My first post'
+title: "My first post"
 pubDate: 2025-02-17
-description: 'Time for my first post'
+description: "Time for my first post"
 ---
 
 # My first blog post
