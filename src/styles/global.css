@@ -1,3 +1,21 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    h1 {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-bold);
+    }
+
+    h2 {
+        font-size: var(--text-xl);
+        font-weight: var(--font-weight-bold);
+    }
+
+    p {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+}

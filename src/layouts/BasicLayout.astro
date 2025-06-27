@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import ThemeIcon from "../components/ThemeIcon.astro";
+import Footer from "../components/Footer.astro";
 const { title = "My Site" } = Astro.props;
 ---
 
@@ -12,18 +13,17 @@ const { title = "My Site" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-300">
-    <header class="p-4 shadow">
+    <header class="p-4">
       <div class="mx-auto flex w-full max-w-5xl">
-        <h1 class="grow text-2xl font-bold">{title}</h1>
+        <h1 class="grow text-2xl font-bold">
+        <a href="/">YJX</a>
+        </h1>
         <ThemeIcon />
       </div>
     </header>
     <main class="mx-auto max-w-5xl p-6">
       <slot />
     </main>
-    <footer class="p-4 text-center text-sm text-gray-500">
-      &copy; {new Date().getFullYear()}
-      Yak Jun Xiang
-    </footer>
+    <Footer />
   </body>
 </html>
