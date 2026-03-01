@@ -1,9 +1,105 @@
 ---
-import BasicLayout from "./BasicLayout.astro";
-
+import Layout from "./Layout.astro";
+import BlueprintCard from "../components/BlueprintCard.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BasicLayout title={frontmatter.title}>
-  <slot />
-</BasicLayout>
+<Layout title={`${frontmatter.title} | YJX`}>
+  <BlueprintCard as="article" class="max-w-3xl">
+    <header class="border-nord-panel/40 mb-8 border-b pb-4">
+      <h1 class="text-nord-purple mb-2">{frontmatter.title}</h1>
+      {
+        frontmatter.date && (
+          <p class="text-nord-text/60 mb-2 font-mono text-sm">
+            {frontmatter.date}
+          </p>
+        )
+      }
+      {
+        frontmatter.tags && (
+          <div class="flex flex-wrap gap-2">
+            {frontmatter.tags.map((tag: any) => (
+              <span class="text-nord-blue font-mono text-sm before:content-['#']">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div class="prose prose-invert prose-nord max-w-none">
+      <slot />
+    </div>
+  </BlueprintCard>
+</Layout>
+
+<style is:global>
+  .prose-nord h1,
+  .prose-nord h2,
+  .prose-nord h3,
+  .prose-nord h4 {
+    color: var(--color-nord-blue);
+    font-family: var(--font-mono);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose-nord p {
+    color: var(--color-nord-text);
+    opacity: 0.9;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .prose-nord a {
+    color: var(--color-nord-purple);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--color-nord-panel);
+    transition: all 0.2s ease;
+  }
+  .prose-nord a:hover {
+    color: var(--color-nord-blue);
+    text-decoration-color: var(--color-nord-blue);
+  }
+  .prose-nord strong {
+    color: var(--color-nord-text);
+    font-weight: 600;
+  }
+  .prose-nord ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .prose-nord li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: var(--color-nord-text);
+    opacity: 0.9;
+  }
+  .prose-nord ul > li::before {
+    content: ":::";
+    position: absolute;
+    left: -1.75rem;
+    color: var(--color-nord-purple);
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+  }
+  .prose-nord code {
+    background-color: var(--color-nord-bg);
+    color: var(--color-nord-purple);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: var(--font-mono);
+    border: 1px solid var(--color-nord-panel);
+  }
+  .prose-nord pre {
+    background-color: var(--color-nord-bg) !important;
+    border: 1px solid var(--color-nord-panel);
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

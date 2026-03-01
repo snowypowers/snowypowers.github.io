@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BlueprintCard from "../../components/BlueprintCard.astro";
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection.
+const allProjects = await getCollection("projects");
+const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Projects | YJX">
+  <section>
+    <div class="mb-8 flex items-center gap-4">
+      <h1 class="mt-0 mb-0">Projects</h1>
+      <div class="bg-nord-panel h-px flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        sortedProjects.map((project) => (
+          <BlueprintCard
+            as="a"
+            href={`/projects/${project.id}`}
+            class="no-underline"
+          >
+            <div class="mb-2 flex items-start justify-between">
+              <h3 class="text-nord-blue group-hover:text-nord-purple m-0 font-mono text-xl transition-colors">
+                {project.data.title}
+              </h3>
+            </div>
+
+            <p class="text-nord-text/70 mb-4 text-sm">
+              {project.data.description}
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              {project.data.tags.map((tag) => (
+                <li class="border-nord-panel/60 text-nord-text/60 border px-2 py-0.5 font-mono text-xs">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </BlueprintCard>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

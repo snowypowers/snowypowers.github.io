@@ -1,12 +1,48 @@
 ---
-import BasicLayout from "../layouts/BasicLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import BlueprintCard from "../components/BlueprintCard.astro";
+import ActionLink from "../components/ActionLink.astro";
 ---
 
-<BasicLayout title="Home">
-  <div class="mx-auto text-center">
-    <p>Lost?</p>
-    <button class="rounded bg-blue-500 px-4 py-2 text-white">
-      <a href="/">Go back home</a>
-    </button>
+<Layout title="404: Not Found">
+  <div
+    class="flex flex-col items-center justify-center py-12 text-center md:py-24"
+  >
+    <BlueprintCard class="mb-12 w-full max-w-lg px-8 py-12 md:px-12 md:py-16">
+      <h1 class="text-nord-blue mb-2 font-mono text-6xl md:text-8xl">404</h1>
+      <p
+        class="text-nord-text/60 mb-8 font-mono text-sm tracking-tighter uppercase"
+      >
+        // [ERROR]: Page_Discovery_Failure
+      </p>
+
+      <div
+        class="bg-nord-bg/50 border-nord-panel/50 mb-10 border p-4 text-left font-mono text-sm"
+      >
+        <div class="mb-2 flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-red-500/50"></span>
+          <span class="text-nord-text/40">Terminal Error</span>
+        </div>
+        <p class="text-nord-purple mb-2">
+          <span class="text-nord-text/50">$</span> browse --path current
+        </p>
+        <p class="text-nord-text/80 mb-0 leading-relaxed">
+          The requested coordinate does not exist in the current layout. The
+          path may have been relocated or purged.
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <ActionLink href="/">Return Home</ActionLink>
+      </div>
+    </BlueprintCard>
+
+    <div
+      class="text-nord-text/30 flex items-center gap-4 font-mono text-xs tracking-widest uppercase"
+    >
+      <span>Status: Disconnected</span>
+      <span class="bg-nord-panel h-1 w-1 rounded-full"></span>
+      <span>Ref: 0x404_NOT_FOUND</span>
+    </div>
   </div>
-</BasicLayout>
+</Layout>

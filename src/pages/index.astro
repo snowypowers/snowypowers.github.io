@@ -1,9 +1,105 @@
 ---
-import BasicLayout from "../layouts/BasicLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import BlueprintCard from "../components/BlueprintCard.astro";
+import ActionLink from "../components/ActionLink.astro";
+
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+const featuredProjects = allProjects
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 2);
+
+const allPosts = await getCollection("blog");
+const recentMusings = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
 
-<BasicLayout title="Home">
-  <p>Welcome to my site!</p>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-</BasicLayout>
+<Layout title="YJX">
+  <section class="mb-16">
+    <h1 class="text-nord-text">
+      <span class="text-nord-blue">&gt;_ </span>Hello, I'm Jun Xiang.
+    </h1>
+    <p class="text-nord-text/90 max-w-2xl text-lg">
+      I tinker with software. 70% practical, 30% idealist. I love my clean code
+      but getting the job done is what I am here for. This is my digital
+      workshop.
+    </p>
+    <div class="mt-8 flex gap-4 font-mono">
+      <ActionLink href="/about" size="sm">Read More</ActionLink>
+      <ActionLink href="/projects" variant="secondary" size="sm"
+        >View Projects</ActionLink
+      >
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <div class="mb-8 flex items-center gap-4">
+      <h2 class="mt-0 mb-0">Featured Projects</h2>
+      <div class="bg-nord-panel h-px flex-grow"></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        featuredProjects.map((project) => (
+          <BlueprintCard
+            as="a"
+            href={`/projects/${project.id}`}
+            class="no-underline"
+          >
+            <h3 class="text-nord-blue group-hover:text-nord-purple mb-2 font-mono text-xl transition-colors">
+              {project.data.title}
+            </h3>
+            <p class="text-nord-text/70 mb-4 text-sm">
+              {project.data.description}
+            </p>
+            <ul class="flex gap-2">
+              {project.data.tags.map((tag) => (
+                <li class="border-nord-panel/60 text-nord-text/60 border px-2 py-0.5 font-mono text-xs">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </BlueprintCard>
+        ))
+      }
+    </div>
+  </section>
+
+  <section>
+    <div class="mb-8 flex items-center gap-4">
+      <h2 class="mt-0 mb-0">Recent Musings</h2>
+      <div class="bg-nord-panel h-px flex-grow"></div>
+    </div>
+
+    <ul class="tech-marker-list space-y-4">
+      {
+        recentMusings.map((musing) => (
+          <li class="group">
+            <a
+              href={`/blog/${musing.id}`}
+              class="group-hover:text-nord-purple flex flex-col justify-between no-underline transition-colors lg:flex-row lg:items-baseline"
+            >
+              <span class="text-nord-text group-hover:text-nord-purple text-lg font-medium">
+                {musing.data.title}
+              </span>
+              <div class="flex flex-col items-start gap-1 lg:items-end">
+                <span class="text-nord-text/50 font-mono text-sm">
+                  {musing.data.date.toISOString().split("T")[0]}
+                </span>
+                <div class="flex flex-wrap gap-2">
+                  {musing.data.tags.map((tag) => (
+                    <span class="text-nord-blue font-mono text-xs before:content-['#']">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

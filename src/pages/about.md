@@ -7,14 +7,15 @@ Hi! I am Jun Xiang and I work as a software engineer. My current location is in 
 
 ## Work
 
-I am a senior software engineer working primarily in server development. I work on **Sponge**, Google's internal service for serving build and test results.
+My experience is primarily in server/API developement, with a focus on developer tooling. My work at Google focuses on storing and serving build and test results across the company. 
 
-Before Google, I built `neon-js`, an open-source javascript SDK for the NEO blockchain.
+Before Google, I built `neon-js`, an open-source javascript SDK for the NEO blockchain. This was driven by my interest in blockchain and an opportunity to build a SDK.
 
 ## Interests
 
-Being an engineer, I love tinkering and understanding how things work. I build and use mechanical keyboards, dabble in the occasional art and crafts and consume quite a bit of anime & japanese culture.
+In the day, I enjoy the occasional hike outdoors, catching up on world events and having a good cup of coffee. I believe life can be simple and enjoyable.
 
+In the night, I dive into video games and watch anime. I particularly enjoy immersive worlds and stories.
 
 ## Contact
 

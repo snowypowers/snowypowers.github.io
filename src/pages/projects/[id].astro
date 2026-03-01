@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from "astro:content";
+import MdLayout from "../../layouts/MdLayout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<MdLayout
+  frontmatter={{
+    title: project.data.title,
+    github: project.data.github,
+    demo: project.data.demo,
+  }}
+>
+  <div class="mb-8 flex gap-4 font-mono">
+    {
+      project.data.github && (
+        <a
+          href={project.data.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-nord-blue hover:text-nord-purple transition-colors"
+        >
+          [Source Code]
+        </a>
+      )
+    }
+    {
+      project.data.demo && (
+        <a
+          href={project.data.demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-nord-blue hover:text-nord-purple transition-colors"
+        >
+          [Live Demo]
+        </a>
+      )
+    }
+  </div>
+
+  <Content />
+</MdLayout>

@@ -1,8 +1,27 @@
 ---
-
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="p-4 text-center text-sm text-gray-500">
-  &copy; {new Date().getFullYear()}
-  Yak Jun Xiang
+<footer
+  class="border-nord-panel/40 text-nord-text/60 mt-auto flex flex-col items-center justify-between gap-4 border-t py-8 font-mono text-sm md:flex-row"
+>
+  <div class="flex items-center gap-4">
+    <span>&copy; {currentYear} Yak Jun Xiang.</span>
+    <span class="text-nord-panel hidden md:inline">|</span>
+    <span>Mode: <span class="text-nord-purple">Software Engineer</span></span>
+  </div>
+  <div class="flex gap-4">
+    <a
+      href="https://github.com/snowypowers"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-nord-blue transition-colors">GitHub</a
+    >
+    <a
+      href="https://linkedin.com/in/yakjunxiang/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-nord-blue transition-colors">LinkedIn</a
+    >
+  </div>
 </footer>
